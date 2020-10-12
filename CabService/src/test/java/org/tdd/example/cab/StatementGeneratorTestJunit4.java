@@ -19,4 +19,11 @@ public class StatementGeneratorTestJunit4 {
         float fare = statementGenerator.calculateJournalFare(0, 15);
         Assert.assertEquals(15, fare,0);
     }
+
+    @Test
+    public void fareForAnyDistanceAndAnyTime() {
+        StatementGenerator statementGenerator = new StatementGenerator();
+        float fare = statementGenerator.calculateJournalFare(25, 12);
+        Assert.assertEquals(262, fare,0);
+    }
 }

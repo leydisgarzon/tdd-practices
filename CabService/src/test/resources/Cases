@@ -1,0 +1,26 @@
+Scenarios:
+
+- No distance and no time
+distance: 0 km
+time: 0m
+output: 0
+
+- No distance and any time
+distance: 0 km
+time: 10m
+output: 10
+
+- Any distance and no time
+distance: 20 km
+time: 0m
+output: error, time can't be zero
+
+- Negative distance or negative time
+distance: -20 km
+time: -10m
+output: error, distance or time can't be negative
+
+- Any distance and any time
+distance: 25 km
+time: 12m
+output: 25 * 10 + 12 * 1 = 262

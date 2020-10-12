@@ -12,4 +12,11 @@ public class StatementGeneratorTestJunit4 {
         float fare = statementGenerator.calculateJournalFare(0, 0);
         Assert.assertEquals(0, fare,0.01);
     }
+
+    @Test
+    public void fareForNoDistanceAndAnyTime() {
+        StatementGenerator statementGenerator = new StatementGenerator();
+        float fare = statementGenerator.calculateJournalFare(0, 15);
+        Assert.assertEquals(15, fare,0);
+    }
 }

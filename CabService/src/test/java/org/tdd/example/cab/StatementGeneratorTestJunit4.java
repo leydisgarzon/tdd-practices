@@ -40,4 +40,13 @@ public class StatementGeneratorTestJunit4 {
         StatementGenerator statementGenerator = new StatementGenerator();
         float fare = statementGenerator.calculateJournalFare(25, 0);
     }
+
+    @Test
+    public void exceptionForNegativeTime() {
+        exceptionRule.expect(CabException.class);
+        exceptionRule.expectMessage("Time can't be negative.");
+        StatementGenerator statementGenerator = new StatementGenerator();
+        float fare = statementGenerator.calculateJournalFare(18, -21);
+    }
+
 }

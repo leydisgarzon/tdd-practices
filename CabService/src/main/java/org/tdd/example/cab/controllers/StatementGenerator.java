@@ -1,4 +1,4 @@
-package org.tdd.example.cab;
+package org.tdd.example.cab.controllers;
 
 public class StatementGenerator {
 

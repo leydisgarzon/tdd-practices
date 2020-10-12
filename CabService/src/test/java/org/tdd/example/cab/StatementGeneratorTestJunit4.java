@@ -57,4 +57,12 @@ public class StatementGeneratorTestJunit4 {
         statementGenerator.calculateJournalFare(-18, 21);
     }
 
+    @Test
+    public void exceptionForNegativeValues() {
+        exceptionRule.expect(CabException.class);
+        exceptionRule.expectMessage("Distance or time can't be negative.");
+        StatementGenerator statementGenerator = new StatementGenerator();
+        statementGenerator.calculateJournalFare(-18, -21);
+    }
+
 }

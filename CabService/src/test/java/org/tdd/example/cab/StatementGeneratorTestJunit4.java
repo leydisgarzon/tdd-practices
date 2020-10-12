@@ -44,7 +44,7 @@ public class StatementGeneratorTestJunit4 {
     @Test
     public void exceptionForNegativeTime() {
         exceptionRule.expect(CabException.class);
-        exceptionRule.expectMessage("Time can't be negative.");
+        exceptionRule.expectMessage("Distance or time can't be negative.");
         StatementGenerator statementGenerator = new StatementGenerator();
         statementGenerator.calculateJournalFare(18, -21);
     }
@@ -52,7 +52,7 @@ public class StatementGeneratorTestJunit4 {
     @Test
     public void exceptionForNegativeDistance() {
         exceptionRule.expect(CabException.class);
-        exceptionRule.expectMessage("Distance can't be negative.");
+        exceptionRule.expectMessage("Distance or time can't be negative.");
         StatementGenerator statementGenerator = new StatementGenerator();
         statementGenerator.calculateJournalFare(-18, 21);
     }

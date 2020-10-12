@@ -58,7 +58,7 @@ public class StatementGeneratorTestJunit4 {
     }
 
     @Test
-    public void exceptionForNegativeValues() {
+    public void exceptionForBothValuesNegative() {
         exceptionRule.expect(CabException.class);
         exceptionRule.expectMessage("Distance or time can't be negative.");
         StatementGenerator statementGenerator = new StatementGenerator();

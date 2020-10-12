@@ -1,14 +1,14 @@
 package org.tdd.example.cab;
 
-import org.junit.Assert;
+/*import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 import org.tdd.example.cab.controllers.StatementGenerator;
-import org.tdd.example.cab.exceptions.CabException;
+import org.tdd.example.cab.exceptions.CabException;*/
 
 public class StatementGeneratorTestJunit4 {
-    @Rule
+    /*@Rule
     public ExpectedException exceptionRule = ExpectedException.none();
 
     @Test
@@ -63,6 +63,6 @@ public class StatementGeneratorTestJunit4 {
         exceptionRule.expectMessage("Distance or time can't be negative.");
         StatementGenerator statementGenerator = new StatementGenerator();
         statementGenerator.calculateJournalFare(-18, -21);
-    }
+    }*/
 
 }

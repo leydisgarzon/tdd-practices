@@ -26,3 +26,8 @@ time: 12m
 output: 25 * 10 + 12 * 1 = 262
 
 - return zero for empty rides' list
+
+- return fare for more than one ride
+ride one: 10km 30m
+ride one: 5km 20m
+out: 200

@@ -24,3 +24,5 @@ output: error, distance or time can't be negative
 distance: 25 km
 time: 12m
 output: 25 * 10 + 12 * 1 = 262
+
+- return zero for empty rides' list

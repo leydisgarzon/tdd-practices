@@ -79,4 +79,11 @@ class StatementGeneratorTestJunit5 {
         Assertions.assertTrue(actualMessage.contains(expectedMessage));
     }
 
+    @Test
+    void returnZeroForEmptyRidesList() {
+        StatementGenerator statementGenerator = new StatementGenerator();
+        float fare = statementGenerator.calculateJournalFare(Collections.emptyList());
+        Assertions.assertEquals(0, fare,0.01);
+    }
+
 }

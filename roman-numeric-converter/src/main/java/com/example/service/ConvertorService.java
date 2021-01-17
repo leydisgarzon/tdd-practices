@@ -1,5 +1,6 @@
 package com.example.service;
 
+import com.example.enums.RomanSymbols;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -10,19 +11,20 @@ public class ConvertorService implements IConvertorService {
     @Override
     public String convert(int arabicNumber) {
         String romanNumber = "";
-        if (arabicNumber >= 9) {
-            romanNumber = transformRepetitiveNumbers(arabicNumber, "X", 10);
-        } else if (arabicNumber >= 4) {
-            romanNumber = transformRepetitiveNumbers(arabicNumber, "V", 5);
-        } else if (arabicNumber > 0){
-            romanNumber = transformRepetitiveNumbers(arabicNumber, "I", 1);
+        if (arabicNumber > 0) {
+            for (RomanSymbols romanSymbols : RomanSymbols.values()) {
+                if (arabicNumber >= romanSymbols.getArabicNumber() - 1) {
+                    romanNumber = transformRepetitiveNumbers(arabicNumber, romanSymbols.getRomanSymbol(), romanSymbols.getArabicNumber());
+                    break;
+                }
+            }
         }
         return romanNumber;
     }
 
     private String transformRepetitiveNumbers(int arabicNumber, String symbol, int number) {
         String romanNumber = symbol;
-        if (arabicNumber == number-1) {
+        if (arabicNumber == number - 1) {
             romanNumber = "I".concat(romanNumber);
         }
         while (arabicNumber-- > number) {

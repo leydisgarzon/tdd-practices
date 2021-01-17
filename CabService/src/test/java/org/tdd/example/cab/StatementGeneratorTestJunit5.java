@@ -96,4 +96,16 @@ class StatementGeneratorTestJunit5 {
         float fare = statementGenerator.calculateJournalFare(rides);
         Assertions.assertEquals(200, fare,0.01);
     }
+
+    @Test
+    void exceptionForNegativeDistanceInOneRideOfTheList() {
+        StatementGenerator statementGenerator = new StatementGenerator();
+        List<Ride> rides = new ArrayList<>();
+        rides.add(new Ride(10, 30));
+        rides.add(new Ride(-5, 20));
+        Exception exception = Assertions.assertThrows(CabException.class, () -> statementGenerator.calculateJournalFare(rides));
+        String expectedMessage = "Distance or time can't be negative.";
+        String actualMessage = exception.getMessage();
+        Assertions.assertTrue(actualMessage.contains(expectedMessage));
+    }
 }

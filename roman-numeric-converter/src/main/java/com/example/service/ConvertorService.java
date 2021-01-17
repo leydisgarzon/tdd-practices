@@ -14,21 +14,18 @@ public class ConvertorService implements IConvertorService {
             romanNumber = transformRepetitiveNumbers(arabicNumber, "X", 10);
         } else if (arabicNumber >= 4) {
             romanNumber = transformRepetitiveNumbers(arabicNumber, "V", 5);
-        } else {
-            while (arabicNumber-- > 0) {
-                romanNumber = romanNumber.concat("I");
-            }
+        } else if (arabicNumber > 0){
+            romanNumber = transformRepetitiveNumbers(arabicNumber, "I", 1);
         }
         return romanNumber;
     }
 
-    private String transformRepetitiveNumbers(int arabicNumber, String x, int i) {
-        String romanNumber;
-        romanNumber = x;
-        if (arabicNumber == i-1) {
+    private String transformRepetitiveNumbers(int arabicNumber, String symbol, int number) {
+        String romanNumber = symbol;
+        if (arabicNumber == number-1) {
             romanNumber = "I".concat(romanNumber);
         }
-        while (arabicNumber-- > i) {
+        while (arabicNumber-- > number) {
             romanNumber = romanNumber.concat("I");
         }
         return romanNumber;

@@ -16,6 +16,9 @@ public class ConvertorService implements IConvertorService {
         if(arabicNumber == 2){
             romanNumber = "II";
         }
+        if(arabicNumber == 3){
+            romanNumber = "III";
+        }
         return romanNumber;
     }
 }

@@ -10,7 +10,9 @@ public class ConvertorService implements IConvertorService {
     @Override
     public String convert(int arabicNumber) {
         String romanNumber = "";
-        if (arabicNumber >= 4) {
+        if (arabicNumber == 9) {
+            romanNumber = "IX";
+        } else if (arabicNumber >= 4) {
             romanNumber = "V";
             if (arabicNumber == 4) {
                 romanNumber = "I".concat(romanNumber);

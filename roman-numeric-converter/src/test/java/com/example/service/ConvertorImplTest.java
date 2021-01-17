@@ -2,6 +2,8 @@ package com.example.service;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -17,24 +19,12 @@ class ConvertorImplTest {
         Assertions.assertEquals("",romanNumber);
     }
 
-    @Test
-    void oneShouldReturnI() {
+    @ParameterizedTest
+    @CsvSource({"1,I", "2,II", "3,III"})
+    void oneToThreeReturnCorrespondingAmountOfI(int arabicNumber, String expected) {
         System.out.println(convertorService);
-        String romanNumber = convertorService.convert(1);
-        Assertions.assertEquals("I",romanNumber);
+        String romanNumber = convertorService.convert(arabicNumber);
+        Assertions.assertEquals(expected,romanNumber);
     }
 
-    @Test
-    void twoShouldReturnII() {
-        System.out.println(convertorService);
-        String romanNumber = convertorService.convert(2);
-        Assertions.assertEquals("II",romanNumber);
-    }
-
-    @Test
-    void threeShouldReturnIII() {
-        System.out.println(convertorService);
-        String romanNumber = convertorService.convert(3);
-        Assertions.assertEquals("III",romanNumber);
-    }
 }

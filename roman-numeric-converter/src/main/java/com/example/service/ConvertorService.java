@@ -11,25 +11,25 @@ public class ConvertorService implements IConvertorService {
     public String convert(int arabicNumber) {
         String romanNumber = "";
         if (arabicNumber >= 9) {
-            romanNumber = "X";
-            if (arabicNumber == 9) {
-                romanNumber = "I".concat(romanNumber);
-            }
-            while (arabicNumber-- > 10) {
-                romanNumber = romanNumber.concat("I");
-            }
+            romanNumber = transformRepetitiveNumbers(arabicNumber, "X", 10);
         } else if (arabicNumber >= 4) {
-            romanNumber = "V";
-            if (arabicNumber == 4) {
-                romanNumber = "I".concat(romanNumber);
-            }
-            while (arabicNumber-- > 5) {
-                romanNumber = romanNumber.concat("I");
-            }
+            romanNumber = transformRepetitiveNumbers(arabicNumber, "V", 5);
         } else {
             while (arabicNumber-- > 0) {
                 romanNumber = romanNumber.concat("I");
             }
+        }
+        return romanNumber;
+    }
+
+    private String transformRepetitiveNumbers(int arabicNumber, String x, int i) {
+        String romanNumber;
+        romanNumber = x;
+        if (arabicNumber == i-1) {
+            romanNumber = "I".concat(romanNumber);
+        }
+        while (arabicNumber-- > i) {
+            romanNumber = romanNumber.concat("I");
         }
         return romanNumber;
     }

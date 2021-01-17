@@ -9,6 +9,9 @@ public class ConvertorService implements IConvertorService {
      */
     @Override
     public String convert(int arabicNumber) {
+        if(arabicNumber == 1){
+            return "I";
+        }
         return "";
     }
 }

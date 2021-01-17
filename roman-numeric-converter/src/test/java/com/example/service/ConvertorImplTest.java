@@ -56,5 +56,10 @@ class ConvertorImplTest {
         Assertions.assertEquals("IX",romanNumber);
     }
 
-
+    @Test
+    void tenShouldReturnX() {
+        System.out.println(convertorService);
+        String romanNumber = convertorService.convert(10);
+        Assertions.assertEquals("X",romanNumber);
+    }
 }

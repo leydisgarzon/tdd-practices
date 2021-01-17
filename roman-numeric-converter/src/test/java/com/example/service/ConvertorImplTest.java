@@ -11,9 +11,9 @@ class ConvertorImplTest {
     private IConvertorService convertorService;
 
     @Test
-    void nullShouldReturnEmptyString() {
+    void zeroShouldReturnEmptyString() {
         System.out.println(convertorService);
-        String romanNumber = convertorService.convert(null);
+        String romanNumber = convertorService.convert(0);
         Assertions.assertEquals("",romanNumber);
     }
 

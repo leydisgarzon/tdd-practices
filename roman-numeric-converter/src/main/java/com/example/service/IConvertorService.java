@@ -6,5 +6,5 @@ public interface IConvertorService {
      * @param arabicNumber arabic number
      * @return roman number
      */
-    String convert(Integer arabicNumber);
+    String convert(int arabicNumber);
 }

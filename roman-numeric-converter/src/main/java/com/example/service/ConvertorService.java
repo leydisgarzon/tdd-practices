@@ -8,7 +8,7 @@ public class ConvertorService implements IConvertorService {
      * {@inheritDoc}
      */
     @Override
-    public String convert(Integer arabicNumber) {
+    public String convert(int arabicNumber) {
         return "";
     }
 }

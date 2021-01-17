@@ -62,4 +62,12 @@ class ConvertorImplTest {
         String romanNumber = convertorService.convert(10);
         Assertions.assertEquals("X",romanNumber);
     }
+
+    @ParameterizedTest
+    @CsvSource({"11,XI", "12,XII", "13,XIII"})
+    void elevenToThirteenReturnCorrespondingAmountOfIAfterV(int arabicNumber, String expected) {
+        System.out.println(convertorService);
+        String romanNumber = convertorService.convert(arabicNumber);
+        Assertions.assertEquals(expected,romanNumber);
+    }
 }

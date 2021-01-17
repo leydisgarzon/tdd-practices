@@ -34,4 +34,10 @@ class ConvertorImplTest {
         Assertions.assertEquals("IV",romanNumber);
     }
 
+    @Test
+    void fiveShouldReturnV() {
+        System.out.println(convertorService);
+        String romanNumber = convertorService.convert(5);
+        Assertions.assertEquals("V",romanNumber);
+    }
 }

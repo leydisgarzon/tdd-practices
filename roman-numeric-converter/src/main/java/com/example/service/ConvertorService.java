@@ -10,10 +10,11 @@ public class ConvertorService implements IConvertorService {
     @Override
     public String convert(int arabicNumber) {
         String romanNumber = "";
-        if (arabicNumber == 4) {
-            romanNumber = "IV";
-        } else if (arabicNumber >= 5) {
+        if (arabicNumber >= 4) {
             romanNumber = "V";
+            if (arabicNumber == 4) {
+                romanNumber = "I".concat(romanNumber);
+            }
             while (arabicNumber-- > 5) {
                 romanNumber = romanNumber.concat("I");
             }

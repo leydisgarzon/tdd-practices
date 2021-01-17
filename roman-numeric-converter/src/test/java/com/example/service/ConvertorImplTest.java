@@ -24,4 +24,11 @@ class ConvertorImplTest {
         Assertions.assertEquals("I",romanNumber);
     }
 
+    @Test
+    void twoShouldReturnII() {
+        System.out.println(convertorService);
+        String romanNumber = convertorService.convert(2);
+        Assertions.assertEquals("II",romanNumber);
+    }
+
 }

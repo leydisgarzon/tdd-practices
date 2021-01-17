@@ -48,4 +48,13 @@ class ConvertorImplTest {
         String romanNumber = convertorService.convert(arabicNumber);
         Assertions.assertEquals(expected,romanNumber);
     }
+
+    @Test
+    void nineShouldReturnIX() {
+        System.out.println(convertorService);
+        String romanNumber = convertorService.convert(9);
+        Assertions.assertEquals("IX",romanNumber);
+    }
+
+
 }

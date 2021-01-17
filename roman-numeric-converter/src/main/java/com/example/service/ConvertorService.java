@@ -13,7 +13,7 @@ public class ConvertorService implements IConvertorService {
         String romanNumber = "";
         if (arabicNumber > 0) {
             for (RomanSymbols romanSymbols : RomanSymbols.values()) {
-                if (arabicNumber >= romanSymbols.getArabicNumber() - 1) {
+                if (arabicNumber >= romanSymbols.getArabicNumber()) {
                     romanNumber = transformRepetitiveNumbers(arabicNumber, romanSymbols.getRomanSymbol(), romanSymbols.getArabicNumber());
                     break;
                 }
@@ -24,9 +24,6 @@ public class ConvertorService implements IConvertorService {
 
     private String transformRepetitiveNumbers(int arabicNumber, String symbol, int number) {
         String romanNumber = symbol;
-        if (arabicNumber == number - 1) {
-            romanNumber = "I".concat(romanNumber);
-        }
         while (arabicNumber-- > number) {
             romanNumber = romanNumber.concat("I");
         }

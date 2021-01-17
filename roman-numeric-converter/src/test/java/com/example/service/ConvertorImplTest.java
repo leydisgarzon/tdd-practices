@@ -40,4 +40,12 @@ class ConvertorImplTest {
         String romanNumber = convertorService.convert(5);
         Assertions.assertEquals("V",romanNumber);
     }
+
+    @ParameterizedTest
+    @CsvSource({"6,VI", "7,VII", "8,VIII"})
+    void sixToEightReturnCorrespondingAmountOfIAfterV(int arabicNumber, String expected) {
+        System.out.println(convertorService);
+        String romanNumber = convertorService.convert(arabicNumber);
+        Assertions.assertEquals(expected,romanNumber);
+    }
 }

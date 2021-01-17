@@ -15,6 +15,9 @@ public class ConvertorService implements IConvertorService {
             if (arabicNumber == 9) {
                 romanNumber = "I".concat(romanNumber);
             }
+            while (arabicNumber-- > 10) {
+                romanNumber = romanNumber.concat("I");
+            }
         } else if (arabicNumber >= 4) {
             romanNumber = "V";
             if (arabicNumber == 4) {
